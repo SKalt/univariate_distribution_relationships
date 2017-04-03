@@ -1,0 +1,77 @@
+is_discrete,id,name
+False,Arcsin,Arcsin
+False,Arctangent,Arctangent
+True,Benford,Benford
+True,Bernoulli,Bernoulli
+False,Beta,Beta
+True,Betabinomial,Beta-binomial
+True,Betapascal,Beta-Pascal
+True,Binomial,Binomial
+False,Cauchy,Cauchy
+False,Chi,Chi
+False,Chisquare,Chi-square
+True,Discreteuniform,Discrete uniform
+True,Discreteweibull,Discrete Weibull
+False,Doublynoncentralf,Doubly noncentral F
+False,Doublynoncentralt,Doubly noncentral t
+False,Erlang,Erlang
+False,Error,Error
+False,Exponential,Exponential
+False,Exponentialpower,Exponential power
+False,Extremevalue,Extreme value
+False,F,F
+False,Gamma,Gamma
+False,Gammanormal,Gamma-normal
+True,Gammapoisson,Gamma-Poisson
+False,Generalizedgamma,Generalized gamma
+False,Generalizedpareto,Generalized Pareto
+True,Geometric,Geometric
+False,Gompertz,Gompertz
+False,Hyperbolicsecant,Hyperbolic-secant
+False,Hyperexponential,Hyperexponential
+True,Hypergeometric,Hypergeometric
+False,Hypoexponential,Hypoexponential
+False,IDB,IDB
+False,Inversegaussian,Inverse Gaussian
+False,Invertedbeta,Inverted beta
+False,Invertedgamma,Inverted gamma
+False,Kolmogorovsmirnov,Kolmogorov-Smirnov
+False,Laplace,Laplace
+True,Logarithm,Logarithm
+False,Loggamma,Log gamma
+False,Logistic,Logistic
+False,Logisticexponential,Logistic-exponential
+False,Loglogistic,Log logistic
+False,Lognormal,Log normal
+False,Lomax,Lomax
+False,Makeham,Makeham
+False,Minimax,Minimax
+False,Muth,Muth
+True,Negativehypergeometric,Negative hypergeometric
+False,Noncentralbeta,Noncentral beta
+False,Noncentralchisquare,Noncentral chi-square
+False,Noncentralf,Noncentral F
+False,Noncentralt,Noncentral t
+False,Normal,Normal
+False,Pareto,Pareto
+True,Pascal,Pascal
+True,Poisson,Poisson
+True,Polya,Polya
+False,Power,Power
+True,Powerseries,Power series
+False,Rayleigh,Rayleigh
+True,Rectangular,Rectangular
+False,Standardcauchy,Standard Cauchy
+False,Standardnormal,Standard normal
+False,Standardpower,Standard power
+False,Standardtriangular,Standard triangular
+False,Standarduniform,Standard uniform
+False,Standardwald,Standard Wald
+False,T,T
+False,TSP,TSP
+False,Triangular,Triangular
+False,Uniform,Uniform
+False,Vonmises,von Mises
+False,Weibull,Weibull
+True,Zeta,Zeta
+True,Zipf,Zipf
