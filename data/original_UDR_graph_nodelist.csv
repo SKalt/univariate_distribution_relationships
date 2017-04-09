@@ -1,0 +1,77 @@
+original_coords,is_discrete,id,name
+"[1666, 976, 1854, 1054]",False,Arcsin,Arcsin
+"[118, 734, 332, 804]",False,Arctangent,Arctangent
+"[1162, 1892, 1349, 1970]",True,Benford,Benford
+"[1664, 313, 1854, 396]",True,Bernoulli,Bernoulli
+"[1662, 816, 1852, 892]",False,Beta,Beta
+"[1022, 64, 1306, 142]",True,Betabinomial,Beta-binomial
+"[182, 318, 432, 394]",True,Betapascal,Beta-Pascal
+"[1210, 298, 1400, 378]",True,Binomial,Binomial
+"[88, 1002, 272, 1078]",False,Cauchy,Cauchy
+"[700, 828, 882, 898]",False,Chi,Chi
+"[762, 988, 974, 1062]",False,Chisquare,Chi-square
+"[324, 64, 602, 142]",True,Discreteuniform,Discrete uniform
+"[38, 564, 320, 642]",True,Discreteweibull,Discrete Weibull
+"[40, 1721, 478, 1797]",False,Doublynoncentralf,Doubly noncentral F
+"[40, 1456, 383, 1532]",False,Doublynoncentralt,Doubly noncentral t
+"[1294, 1120, 1481, 1196]",False,Erlang,Erlang
+"[1102, 1490, 1288, 1563]",False,Error,Error
+"[790, 1286, 1008, 1360]",False,Exponential,Exponential
+"[1549, 1363, 1851, 1439]",False,Exponentialpower,Exponential power
+"[635, 2000, 902, 2072]",False,Extremevalue,Extreme value
+"[319, 1314, 508, 1390]",False,F,F
+"[1310, 846, 1494, 922]",False,Gamma,Gamma
+"[1536, 448, 1852, 530]",False,Gammanormal,Gamma-normal
+"[602, 298, 884, 374]",True,Gammapoisson,Gamma-Poisson
+"[1352, 720, 1694, 798]",False,Generalizedgamma,Generalized gamma
+"[634, 2097, 979, 2171]",False,Generalizedpareto,Generalized Pareto
+"[40, 422, 230, 502]",True,Geometric,Geometric
+"[1588, 1206, 1805, 1283]",False,Gompertz,Gompertz
+"[42, 864, 284, 938]",False,Hyperbolicsecant,Hyperbolic-secant
+"[416, 1425, 695, 1498]",False,Hyperexponential,Hyperexponential
+"[1506, 190, 1852, 270]",True,Hypergeometric,Hypergeometric
+"[837, 1134, 1119, 1210]",False,Hypoexponential,Hypoexponential
+"[442, 1575, 625, 1652]",False,IDB,IDB
+"[378, 864, 652, 936]",False,Inversegaussian,Inverse Gaussian
+"[1352, 1020, 1600, 1092]",False,Invertedbeta,Inverted beta
+"[988, 838, 1264, 912]",False,Invertedgamma,Inverted gamma
+"[1509, 2096, 1852, 2173]",False,Kolmogorovsmirnov,Kolmogorov-Smirnov
+"[821, 1590, 1039, 1666]",False,Laplace,Laplace
+"[258, 172, 448, 252]",True,Logarithm,Logarithm
+"[1020, 694, 1240, 770]",False,Loggamma,Log gamma
+"[1008, 2096, 1195, 2175]",False,Logistic,Logistic
+"[1185, 1268, 1510, 1344]",False,Logisticexponential,Logistic-exponential
+"[930, 1846, 1148, 1924]",False,Loglogistic,Log logistic
+"[1240, 602, 1456, 678]",False,Lognormal,Log normal
+"[931, 1986, 1117, 2065]",False,Lomax,Lomax
+"[1632, 1084, 1850, 1158]",False,Makeham,Makeham
+"[1665, 1494, 1850, 1568]",False,Minimax,Minimax
+"[819, 1469, 1005, 1545]",False,Muth,Muth
+"[1400, 64, 1854, 142]",True,Negativehypergeometric,Negative hypergeometric
+"[1540, 552, 1850, 630]",False,Noncentralbeta,Noncentral beta
+"[644, 722, 982, 796]",False,Noncentralchisquare,Noncentral chi-square
+"[69, 1582, 383, 1657]",False,Noncentralf,Noncentral F
+"[39, 1314, 290, 1391]",False,Noncentralt,Noncentral t
+"[850, 474, 1070, 553]",False,Normal,Normal
+"[767, 1724, 955, 1798]",False,Pareto,Pareto
+"[384, 452, 572, 532]",True,Pascal,Pascal
+"[976, 202, 1166, 282]",True,Poisson,Poisson
+"[1306, 424, 1492, 500]",True,Polya,Polya
+"[1664, 1769, 1852, 1844]",False,Power,Power
+"[490, 188, 776, 270]",True,Powerseries,Power series
+"[508, 1722, 693, 1797]",False,Rayleigh,Rayleigh
+"[742, 64, 956, 142]",True,Rectangular,Rectangular
+"[39, 1175, 259, 1251]",False,Standardcauchy,Standard Cauchy
+"[354, 564, 572, 644]",False,Standardnormal,Standard normal
+"[1556, 1643, 1852, 1719]",False,Standardpower,Standard power
+"[1263, 1739, 1512, 1815]",False,Standardtriangular,Standard triangular
+"[1306, 1472, 1555, 1547]",False,Standarduniform,Standard uniform
+"[342, 1050, 584, 1118]",False,Standardwald,Standard Wald
+"[306, 1158, 493, 1234]",False,T,T
+"[1385, 1836, 1602, 1911]",False,TSP,TSP
+"[1227, 2096, 1478, 2174]",False,Triangular,Triangular
+"[1664, 1867, 1852, 1944]",False,Uniform,Uniform
+"[1635, 1996, 1852, 2072]",False,Vonmises,von Mises
+"[634, 1854, 838, 1929]",False,Weibull,Weibull
+"[38, 206, 228, 284]",True,Zeta,Zeta
+"[38, 64, 228, 142]",True,Zipf,Zipf
