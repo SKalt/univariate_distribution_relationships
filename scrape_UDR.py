@@ -57,6 +57,7 @@ if __name__ == "__main__":
         if re.match(r"(IDB|TSP)", edge.get("name")):
             # this is an exception to the DistsrcDisttarrget edge-naming pattern
             match = re.match(r"(IDB|TSP)([A-Z][a-z]{0,})(B|T){0,}", name)
+            edge["source"], edge["target"], edge["flag"] = match.groups()
         else:
             match = re.search(r"([A-Z][a-z]{0,})([A-Z][a-z]{0,})(B|T){0,}", name)
             edge["source"], edge["target"], edge["flag"] = match.groups()
