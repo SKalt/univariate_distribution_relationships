@@ -49,7 +49,7 @@ B,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/ErlangChisquareB.pdf,ErlangChisq
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/ChisquareErlang.pdf,ChisquareErlang,,Chisquare,Erlang
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/LomaxLoglogistic.pdf,LomaxLoglogistic,,Lomax,Loglogistic
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/ExponentialErlang.pdf,ExponentialErlang,,Exponential,Erlang
-,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/DoublynoncentraltNoncentralt.pdf,DoublynoncentraltNonentralt,,Doublynoncentralt,Nonentralt
+,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/DoublynoncentraltNoncentralt.pdf,DoublynoncentraltNoncentralt,,Doublynoncentralt,Noncentralt
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/StandardcauchyHyperbolicsecant.pdf,StandardcauchyHyperbolicsecant,,Standardcauchy,Hyperbolicsecant
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/FChisquare.pdf,FChisquare,,F,Chisquare
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/BinomialNormal.pdf,BinomialNormal,,Binomial,Normal
@@ -81,7 +81,6 @@ T,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/ErlangChisquareT.pdf,ErlangChisq
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/BinomialBernoulli.pdf,BinomialBernoulli,,Binomial,Bernoulli
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/LaplaceExponential.pdf,LaplaceExponential,,Laplace,Exponential
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/BetaInvertedbeta.pdf,BetaInvertedbeta,,Beta,Invertedbeta
-,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/NormalGammanormal.pdf,NormalGammanormal,,Normal,Gammanormal
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/GammapoissonPascal.pdf,GammapoissonPascal,,Gammapoisson,Pascal
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/GeneralizedgammaGamma.pdf,GeneralizedgammaGamma,,Generalizedgamma,Gamma
 ,http://www.math.wm.edu/~leemis/chart/UDR/PDFs/PowerseriesLogarithm.pdf,PowerseriesLogarithm,,Powerseries,Logarithm

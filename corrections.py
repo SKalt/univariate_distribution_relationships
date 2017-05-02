@@ -25,12 +25,20 @@ if __name__ == '__main__':
             graph["nodes"].remove(node)
         else:
             pass
+    # remove all edges associated with the node:
+    for link in graph["links"]:
+        if link["source"] == "Gammanormal" or link["target"] == "Gammanormal":
+            graph["links"].remove(link)
+            print('Removing: ' + str(link))
+        else:
+            pass
 
     # Properties
     # Incorrect properties: 
     # Standard Cauchy (S)
     # Standard Wald (S)
     # von Mises (S)
+    
     # Unproven properties:
     # Cauchy (C)
     # Cauchy (I)
@@ -95,6 +103,17 @@ if __name__ == '__main__':
     # Plots on the distribution page would be helpful: Polya, Power series
     "Also not stored in the json graph we're editing"
 
+    #check & correct link source/target IDs
+    ids = set([node['id'] for node in graph['nodes']])
+    for link in graph['links']:
+        if link['source'] not in ids:
+            print(link, 'source not in ids')
+        if link['target'] not in ids:
+            print(link, 'target not in ids')
+    faulty = [link for link in graph['links'] if link['target'] not in ids][0]
+    faulty['target'] = 'Noncentralt'
+    faulty['name'] = 'DoublynoncentraltNoncentralt'
+            
     # save the corrected data
     with open('./data/corrected_UDR_graph.json', 'w') as target_json_file:
         target_json_file.write(json.dumps(graph))
