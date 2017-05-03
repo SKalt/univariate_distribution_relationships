@@ -1,0 +1,29 @@
+line {
+    stroke:#999;
+    stroke-width: 2.5px;
+}
+line:hover {
+    stroke-width: 3px;
+    stroke: #000;
+}
+rect {
+    fill: #efefef;
+    stroke-width: 1.5px;
+    stroke: #000;
+    display: none;
+}
+
+text {
+    font-family:monospace;
+    display: none;
+}
+
+.fixed circle {
+	display:none;
+}
+.fixed rect {
+	display: block;
+}
+.fixed text {
+    display: block;
+}

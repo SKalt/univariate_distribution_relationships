@@ -9,6 +9,7 @@ var simulation = d3.forceSimulation()
 	.force("charge", d3.forceManyBody())
 	.force("center", d3.forceCenter(width / 2, height / 2));
 var globalGraph; var globalLayout;
+
 d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
     if (error) throw error;
     var link = svg.append("g")
@@ -24,7 +25,8 @@ d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
             .data(graph.nodes)
             .enter().append("g")
             .attr("class", "nodeGroup");
-    var node = nodeGroup.append("rect")
+    
+    var rects = nodeGroup.append("rect")
 	    //.enter().append("rect")
 	    .attr("width", getWidth)
 	    .attr("height", getHeight)
@@ -33,14 +35,22 @@ d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
 		  .on("start", dragstarted)
 		  .on("drag", dragged)
 		  .on("end", dragended));
+
+    var circles = nodeGroup.append("circle")
+	    //.enter().append("rect")
+	    .attr("width", getWidth)
+	    .attr("height", getHeight)
+	    .attr('r', 5)
+	    // .attr("transform", (d)=>`translate(${-getWidth(d)/2},${-getHeight(d)/2})`)
+	    .call(d3.drag()
+		  .on("start", dragstarted)
+		  .on("drag", dragged)
+		  .on("end", dragended));
     
-    node.append("title").text((d)=>d.name);
-    var nodelabels = svg.select('g.nodes')
-	    .attr('class', 'nodeLabels')
-	    .selectAll("text")
-	    .data(graph.nodes)
-	    .enter()
-	    .append("text")
+    rects.append("title").text((d)=>d.name);
+    circles.append("title").text((d)=>d.name);
+    
+    var nodelabels = nodeGroup.append('text')
 	    .attr("x", (d)=>d.x)
 	    .attr("y", (d)=>d.y)
 	    .attr("class", "nodelabel")
@@ -56,7 +66,7 @@ d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
 	.nodes(graph.nodes)
 	.on("tick", ticked);
 
-    simulation.force("link").links(graph.links).distance(500);
+    simulation.force("link").links(graph.links);
     
     function ticked() {
 	link
@@ -64,9 +74,12 @@ d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
             .attr("y1", function(d) { return d.source.y; })
             .attr("x2", function(d) { return d.target.x; })
             .attr("y2", function(d) { return d.target.y; });
-	node
+	rects
             .attr("x", function(d) { return d.x; })
             .attr("y", function(d) { return d.y; });
+	circles
+	    .attr('cx', function(d) { return d.x; })
+	    .attr('cy', function(d) { return d.y; });
 	nodelabels
 	    .attr("x", function(d) { return d.x; }) 
 	    .attr("y", function(d) { return d.y; });
@@ -74,27 +87,38 @@ d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
     
     let zoom = d3.zoom().on("zoom", zoomed);
     svg.call(zoom);
-    var to_transform = d3.selectAll('.links, .nodeLabels');
+    var to_transform = d3.selectAll('.nodes, .links');
     function zoomed(){
 	var transform = d3.event.transform;
 	to_transform.attr("transform", transform);
     }
-    
-    function originalLayout(){
-	simulation.stop();
-	node
-	    .classed('fixed', (d)=>{d.fixed=true; return true;})
-	    .attr('fx', (d)=>d.original_coords[0])
-	    .attr('fy', (d)=>d.original_coords[1]);
-	link
-	    .attr("x1", (d)=>d.source.x).attr("y1", (d)=>d.source.y)
-            .attr("x2", (d)=>d.target.x).attr("y2", (d)=>d.target.y);
-    }
-    
-    globalGraph = graph;
-    globalLayout = originalLayout;
     debugger;
 });
+
+function originalLayout(){
+    simulation.nodes().forEach(
+	function(node){
+	    node.fx = node.original_coords[0];
+	    node.fy = node.original_coords[1];
+	    node.fixedLayout = true;
+	});
+    d3.selectAll('.nodeGroup').classed('fixed', function(){
+	return !/fixed/.exec(d3.select(this).attr('class'));
+    });
+    simulation.restart();
+}
+
+function d3Layout(){
+    simulation.nodes().forEach(
+	function(node){
+	    node.fx = node.fy = null;
+	    node.fixedLayout = false;
+	}
+    );
+     d3.selectAll('.nodeGroup').classed('fixed', function(){
+	return !/fixed/.exec(d3.select(this).attr('class'));
+    });
+}
 
 function dragstarted(d) {
     if (!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -109,6 +133,9 @@ function dragged(d) {
 
 function dragended(d) {
     if (!d3.event.active) simulation.alphaTarget(0);
+    if (d.fixedLayout){
+	return;
+    }
     d.fx = null;
     d.fy = null;
 }
