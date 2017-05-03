@@ -6,11 +6,27 @@ line:hover {
     stroke-width: 3px;
     stroke: #000;
 }
+
 rect {
     fill: #efefef;
     stroke-width: 1.5px;
-    stroke: #000;
+    stroke: #cbcbcb;
     display: none;
+}
+rect:hover {
+    fill: #e0e0e0;
+    stroke:#6d6d6d;
+}
+
+circle {
+    fill: #efefef;
+    stroke-width: 1.5px;
+    stroke: #cbcbcb;
+}
+
+circle:hover {
+    fill: #e0e0e0;
+    stroke: #6d6d6d;
 }
 
 text {

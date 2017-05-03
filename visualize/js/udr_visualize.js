@@ -7,8 +7,8 @@ let height = svg.attr("height");
 var simulation = d3.forceSimulation()
 	.force("link", d3.forceLink().id(function(d) { return d.id; }))
 	.force("charge", d3.forceManyBody())
-	.force("center", d3.forceCenter(width / 2, height / 2));
-var globalGraph; var globalLayout;
+	.force("center", d3.forceCenter(width / 2, height / 2))
+	.force("collide", d3.forceCollide(15));
 
 d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
     if (error) throw error;
@@ -40,7 +40,7 @@ d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
 	    //.enter().append("rect")
 	    .attr("width", getWidth)
 	    .attr("height", getHeight)
-	    .attr('r', 5)
+	    .attr('r', 10)
 	    // .attr("transform", (d)=>`translate(${-getWidth(d)/2},${-getHeight(d)/2})`)
 	    .call(d3.drag()
 		  .on("start", dragstarted)
@@ -92,7 +92,26 @@ d3.json("../data/corrected_UDR_graph.json", function(error, graph) {
 	var transform = d3.event.transform;
 	to_transform.attr("transform", transform);
     }
-    debugger;
+
+    d3.selectAll('.nodeGroup').selectAll('rect, circle, text')
+	.on(
+	    'click',
+	    function(d){
+		d3.select('#name')
+		    .text(d.name)
+		    .attr('href', `http://www.math.wm.edu/` +
+			  `~leemis/chart/UDR/PDFs/${d.id}.pdf`);
+	    }
+	);
+    d3.selectAll('.links').selectAll('line')
+	.on(
+	    'click',
+	    function(d){
+		d3.select('#name')
+		    .text(d.source.name + ' → ' + d.target.name)
+		    .attr('href', d.href);
+	    });
+    originalLayout();
 });
 
 function originalLayout(){
@@ -117,7 +136,9 @@ function d3Layout(){
     );
      d3.selectAll('.nodeGroup').classed('fixed', function(){
 	return !/fixed/.exec(d3.select(this).attr('class'));
-    });
+     });
+    simulation.alphaTarget(0.3).restart();
+    setTimeout(()=>simulation.alphaTarget(0), 3000);
 }
 
 function dragstarted(d) {
@@ -140,6 +161,11 @@ function dragended(d) {
     d.fy = null;
 }
 
-
-
-// initialize with Leemis's original layout
+d3.select('button').on('click', function(){
+    if (/fixed/.exec(d3.select('.nodeGroup').attr('class'))){
+	// this is the original layout
+	d3Layout();
+    } else {
+	originalLayout();
+    }
+});
